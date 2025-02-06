@@ -1,0 +1,210 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif; /* Clean, modern font */
+  background-color: #f4f7fc; /* Light background for contrast */
+  color: #333; /* Dark text for readability */
+  line-height: 1.6;
+}
+
+/* Container Styling */
+div {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+h1 {
+  font-size: 2.2rem;
+  color: #4CAF50; /* Green for title */
+  margin-bottom: 20px;
+}
+
+/* Form Styling */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Space between form elements */
+}
+
+input, textarea, select, button {
+  padding: 12px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  color: #333;
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: #4CAF50; /* Green color on focus */
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.3);
+}
+
+textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+button {
+  padding: 14px;
+  background-color: #4CAF50; /* Green for positive action */
+  color: white;
+  border: none;
+  font-size: 1.1rem;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+  background-color: #45a049; /* Darker green on hover */
+  transform: scale(1.05); /* Slight scaling effect */
+}
+
+button:disabled {
+  background-color: #ddd;
+  cursor: not-allowed;
+}
+
+p.error {
+  color: #e53935; /* Red error color */
+  font-size: 0.9rem;
+  margin-top: 10px;
+  text-align: left;
+}
+
+/* Todo List Styling */
+ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 30px;
+}
+
+li {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px;
+  margin-top: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+li:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+li h3 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+li p {
+  font-size: 1rem;
+  margin-bottom: 8px;
+  color: #666;
+}
+
+li .priority {
+  background-color: #e53935; /* High priority red */
+  color: white;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-weight: bold;
+  text-transform: capitalize;
+  font-size: 0.9rem;
+}
+
+li .priority.medium {
+  background-color: #ff9800; /* Medium priority orange */
+}
+
+li .priority.low {
+  background-color: #4caf50; /* Low priority green */
+}
+
+li .completed {
+  text-decoration: line-through;
+  color: #999; /* Gray for completed tasks */
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  border-radius: 8px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+  background-color: #45a049;
+  transform: scale(1.05);
+}
+
+button:focus {
+  outline: none;
+  border: 2px solid #4CAF50;
+}
+
+button:disabled {
+  background-color: #ddd;
+  cursor: not-allowed;
+}
+
+button.toggle-completion {
+  background-color: #f39c12; /* Yellow for toggle button */
+  color: white;
+}
+
+button.toggle-completion:hover {
+  background-color: #e67e22;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 600px) {
+  div {
+    padding: 15px;
+    margin: 20px;
+  }
+
+  form {
+    gap: 15px;
+  }
+
+  input, textarea, select, button {
+    font-size: 0.9rem; /* Adjust font size for smaller screens */
+  }
+
+  button {
+    padding: 12px;
+  }
+
+  li {
+    padding: 15px;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+  }
+
+  p {
+    font-size: 0.9rem;
+  }
+}

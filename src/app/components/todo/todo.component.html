@@ -1,0 +1,58 @@
+<div>
+  <h1>To-Do List</h1>
+  <form [formGroup]="todoForm" (ngSubmit)="addTodo()">
+    <input type="text" formControlName="title" placeholder="Task Title" required />
+    <textarea formControlName="description" placeholder="Task Description"></textarea>
+
+    <select formControlName="priority">
+      <option value='Low'>Low</option>
+      <option value='Medium'>Medium</option>
+      <option value='High'>High</option>
+    </select>
+
+    <input type="date" formControlName="startDate" required />
+    <input type="date" formControlName="endDate" required />
+
+    <p *ngIf="todoForm.errors?.['dateInvalid']" class="error">
+      End Date must be after Start Date.
+    </p>
+
+    <button type="submit" [disabled]="todoForm.invalid">Add Task</button>
+  </form>
+
+  <ul>
+    <li *ngFor="let todo of todos;let i=index">
+    <h3 [class.completed]='todo.completed'>{{
+      todo.title
+    }}
+      </h3>
+      <p>
+        {{
+          todo.description
+        }}
+      </p>
+      <p>Priority:
+          <strong>{{
+            todo.priority
+          }}
+            </strong>
+      </p>
+      <p>
+        Start Date:{{
+          todo.startDate
+        }}
+      </p>
+      <p>
+       End Date :
+       {{
+        todo.endDate
+       }}
+      </p>
+      <button (click)="toggleCompletion(i)">
+        {{
+          todo.completed ? "Undo":"Complete"
+        }}
+      </button>
+    </li>
+  </ul>
+</div>
